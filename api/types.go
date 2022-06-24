@@ -425,6 +425,14 @@ type AppCompact struct {
 	}
 	PlatformVersion string
 	Services        []Service
+	PostgresAppRole *struct {
+		Name string
+	}
+}
+
+func (app *AppCompact) IsPostgresApp() bool {
+	// check app.PostgresAppRole.Name == "postgres_cluster"
+	return app.PostgresAppRole != nil && app.PostgresAppRole.Name == "postgres_cluster"
 }
 
 type AppStatus struct {

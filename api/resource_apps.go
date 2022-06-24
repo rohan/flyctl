@@ -178,6 +178,9 @@ func (client *Client) GetAppCompact(ctx context.Context, appName string) (*AppCo
 						createdAt
 					}
 				}
+				postgresAppRole: role {
+					name
+				}
 			}
 		}
 	`
